@@ -689,6 +689,28 @@ img {
   }
 }
 @media (max-width: 1100px) {
+  .bgo-1 {
+    top: 10% !important;
+    left: 5% !important;
+  }
+
+  .bgo-3 {
+    top: 0% !important;
+    right: 20% !important;
+  }
+
+  .bgo-2 {
+    width: 30px;
+    height: 30px;
+    bottom: 7% !important;
+    left: 2%;
+  }
+
+  .bgo-4 {
+    top: 30% !important;
+    left: 80% !important;
+  }
+
   .page {
     margin: 0;
   }
