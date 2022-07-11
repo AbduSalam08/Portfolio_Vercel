@@ -11,6 +11,7 @@
 body {
   background-color: #e9e9ec;
   overflow-x: hidden !important;
+  min-width: 300px !important;
 }
 
 ::-moz-selection {
@@ -814,7 +815,7 @@ img {
   }
 
   .skills-bar {
-    margin: 20px 0 !important;
+    margin: 20px 10px !important;
   }
 
   .contact .social-media-links {
@@ -822,6 +823,10 @@ img {
   }
 }
 @media (max-width: 400px) {
+  .logo-section h3 {
+    font-size: 12px !important;
+  }
+
   .home,
 .about,
 .skills,
