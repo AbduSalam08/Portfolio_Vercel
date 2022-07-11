@@ -37,13 +37,17 @@
 
     <!--  navigation -->
 
+    <i class="fas fa-bars openNav"></i>
     <div class="nav">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#skills">SKILLS</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#contact">CONTACT</a>
-        <div class="indicator parallaxScrollItem" data-ps-speed="-0.04"></div>
+        <i class="fas fa-times closeNav"></i>
+        <div class="links">
+            <a href="#home" class="homeLink"> <span class="indicator "></span>HOME</a>
+            <a href="#about" class="aboutLink"><span class="indicator "></span>ABOUT</a>
+            <a href="#skills" class="skillsLink"><span class="indicator "></span>SKILLS</a>
+            <a href="#projects" class="worksLink"><span class="indicator "></span>PROJECTS</a>
+            <a href="#contact" class="contactLink"><span class="indicator "></span>CONTACT</a>
+        </div>
+        <!-- <div class="indicator parallaxScrollItem" data-ps-speed="-0.04"></div> -->
     </div>
 
     <!-- bottom links -->
@@ -234,8 +238,8 @@
             const x = (window.innerWidth - e.pageX * speed) / 100
             const y = (window.innerWidth - e.pageY * speed) / 100
 
-            console.log(x);
-            console.log(y);
+            // console.log(x);
+            // console.log(y);
 
             layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
         })
@@ -248,7 +252,7 @@
             const speedX = item.getAttribute('data-psX-speed')
 
             let scrollPosition = window.pageYOffset;
-            console.log(scrollPosition);
+            // console.log(scrollPosition);
             const effectSpeedY = (scrollPosition * speedY)
             const effectSpeedX = (scrollPosition * speedX)
 
@@ -272,7 +276,70 @@
     }
     callDistort();
 
+    // static navigation indicator
 
+    let homeLink = document.querySelector('.homeLink');
+    let aboutLink = document.querySelector('.aboutLink');
+    let skillsLink = document.querySelector('.skillsLink');
+    let worksLink = document.querySelector('.worksLink');
+    let contactLink = document.querySelector('.contactLink');
+    let hIn = document.querySelector('.homeLink > span')
+    let aIn = document.querySelector('.aboutLink > span')
+    let sIn = document.querySelector('.skillsLink > span')
+    let wIn = document.querySelector('.worksLink > span')
+    let cIn = document.querySelector('.contactLink > span')
+
+    homeLink.addEventListener('click', (e) => {
+        hIn.classList.add('active')
+        aIn.classList.remove('active')
+        sIn.classList.remove('active')
+        wIn.classList.remove('active')
+        cIn.classList.remove('active')
+    })
+
+    aboutLink.addEventListener('click', (e) => {
+        hIn.classList.remove('active')
+        aIn.classList.add('active')
+        sIn.classList.remove('active')
+        wIn.classList.remove('active')
+        cIn.classList.remove('active')
+    })
+
+    skillsLink.addEventListener('click', (e) => {
+        hIn.classList.remove('active')
+        aIn.classList.remove('active')
+        sIn.classList.add('active')
+        wIn.classList.remove('active')
+        cIn.classList.remove('active')
+    })
+
+    worksLink.addEventListener('click', (e) => {
+        hIn.classList.remove('active')
+        aIn.classList.remove('active')
+        sIn.classList.remove('active')
+        wIn.classList.add('active')
+        cIn.classList.remove('active')
+    })
+    contactLink.addEventListener('click', (e) => {
+        hIn.classList.remove('active')
+        aIn.classList.remove('active')
+        sIn.classList.remove('active')
+        wIn.classList.remove('active')
+        cIn.classList.add('active')
+    })
+
+    // toggle nav
+    let navOn = document.querySelector('.openNav')
+    let navOff = document.querySelector('.closeNav')
+    let navFixed = document.querySelector('.nav')
+    navOn.addEventListener('click', (e) => {
+        navFixed.classList.add('navOpen')
+        navFixed.classList.remove('navClose')
+    })
+    navOff.addEventListener('click', e => {
+        navFixed.classList.remove('navOpen')
+        navFixed.classList.add('navClose')
+    })
 
 </script>
 
