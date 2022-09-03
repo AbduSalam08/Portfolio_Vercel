@@ -261,20 +261,20 @@
         })
     })
 
-    // call distort effect
-    const content = document.querySelector('.page');
-    let currentPos = window.pageYOffset;
+    // // call distort effect
+    // const content = document.querySelector('.page');
+    // let currentPos = window.pageYOffset;
 
-    const callDistort = function () {
-        const newPos = window.pageYOffset;
-        const diff = newPos - currentPos;
-        const speed = diff * 0.35;
+    // const callDistort = function () {
+    //     const newPos = window.pageYOffset;
+    //     const diff = newPos - currentPos;
+    //     const speed = diff * 0.35;
 
-        content.style.transform = `skewY(${speed}deg)`;
-        currentPos = newPos;
-        requestAnimationFrame(callDistort);
-    }
-    callDistort();
+    //     content.style.transform = `skewY(${speed}deg)`;
+    //     currentPos = newPos;
+    //     requestAnimationFrame(callDistort);
+    // }
+    // callDistort();
 
     // static navigation indicator
 
