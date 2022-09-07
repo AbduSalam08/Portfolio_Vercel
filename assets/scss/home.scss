@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   scroll-behavior: smooth;
   transition: all 0.2s !important;
   //   user-select: none;
@@ -29,15 +29,16 @@ body {
   color: #e9e9ec;
 }
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 4px;
+  height: 4px;
   // background-color: transparent;
   // box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.4) ;
 }
-// ::-webkit-scrollbar-thumb{
-//   width: 10px;
-//   background-color: #313131;
-//   border-radius: 10px;
-// }
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  background-color: #313131;
+  border-radius: 10px;
+}
 @keyframes rotate {
   0%,
   100% {
@@ -76,7 +77,7 @@ img {
 }
 // bgmutedText
 .bgMutedText {
-  font-family: 'agency fb', sans-serif;
+  font-family: "agency fb", sans-serif;
   position: absolute;
   color: $bgsectionText;
   opacity: 6%;
@@ -111,7 +112,7 @@ img {
     letter-spacing: 0.5px;
     position: relative;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 3%;
       left: 0;
@@ -155,25 +156,24 @@ img {
     opacity: 0;
     z-index: -1;
   }
-    .indicator {
-      position: absolute;
-      opacity: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0%;
-      transform: translate(-160%, -50%) !important;
-      // transform: translateX(-17px);
-      width: 15px;
-      height: 4px;
-      background-color: $black;
-    }
-    .active {
-      opacity: 1;
-      top: 50% !important;
-      left: 0% !important;
-      transform: translate(-115%, -50%) !important;
-    }
-
+  .indicator {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0%;
+    transform: translate(-160%, -50%) !important;
+    // transform: translateX(-17px);
+    width: 15px;
+    height: 4px;
+    background-color: $black;
+  }
+  .active {
+    opacity: 1;
+    top: 50% !important;
+    left: 0% !important;
+    transform: translate(-115%, -50%) !important;
+  }
 
   .links {
     @extend .flex;
@@ -189,16 +189,16 @@ img {
       width: 100px;
     }
   }
-     a::before {
-       content: '';
-       position: absolute;
-       top: 0;
-       left: -10px;
-       width: 1px;
-       height: 100%;
-       border-radius: 50px;
-       background-color: $navText;
-     }
+  a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 1px;
+    height: 100%;
+    border-radius: 50px;
+    background-color: $navText;
+  }
 }
 // bottom links
 .bottom-links {
@@ -226,7 +226,7 @@ img {
     justify-content: space-between;
     h1 {
       font-size: 80px;
-      font-family: 'poppins', sans-serif;
+      font-family: "poppins", sans-serif;
       // text-shadow: 0px 0px 1px #888888, -14px 10px 3px rgba(26, 6, 6, 16%);
       font-weight: 500;
       z-index: 2;
@@ -349,6 +349,7 @@ img {
   width: 100%;
   position: relative;
   transition: transform 0.4s !important;
+  // overflow: hidden;
   .hero-text {
     margin: 10px 0;
     margin-left: 10px;
@@ -388,6 +389,14 @@ img {
         transform: translate(3px, -3px);
         cursor: pointer;
       }
+    }
+    .actived {
+      background-color: $cardLM;
+      color: $cardLMText;
+      font-weight: bold;
+      filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 96%));
+      transform: translate(3px, -3px);
+      cursor: pointer;
     }
   }
   .skills-bar {
@@ -437,6 +446,14 @@ img {
     right: -2%;
     top: 65%;
   }
+  .sillsbg-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    // height: 400px;
+    filter: drop-shadow(-5px 15px 6px rgba(0, 0, 0, 0.3));
+  }
 }
 // projects
 .projects {
@@ -471,6 +488,7 @@ img {
     .card {
       width: 300px;
       height: 300px;
+      overflow: hidden;
       background-color: $cardLM;
       margin: 20px 30px;
       padding: 20px;
@@ -509,7 +527,8 @@ img {
       opacity: 0;
     }
 
-    .spotify {
+    .spotify,
+    .linkedin {
       img {
         width: 50%;
         margin-left: auto;
@@ -524,7 +543,7 @@ img {
     cursor: pointer;
     margin-left: 10px;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -10%;
       left: 0;
@@ -662,7 +681,7 @@ img {
       position: relative;
       font-weight: 600;
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 5%;
         left: 50%;
@@ -702,8 +721,8 @@ img {
     left: 0;
     top: 0 !important;
     border-radius: 0 0 20px 20px;
-    .links{
-      a{
+    .links {
+      a {
         font-size: 16px;
       }
     }
@@ -713,186 +732,190 @@ img {
       z-index: 999;
     }
   }
-    // toggle classes
-    .navOpen {
-      top: 0% !important;
-      left: 0% !important;   
-      transition: 1s all cubic-bezier(0.645, 0.045, 0.355, 1) !important;
-    }
-    .navClose {
-      top: -200% !important;
-      left: 0% !important;
-      transition: 1s all cubic-bezier(0.645, 0.045, 0.355, 1) !important;
-    }
+  // toggle classes
+  .navOpen {
+    top: 0% !important;
+    left: 0% !important;
+    transition: 1s all cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }
+  .navClose {
+    top: -200% !important;
+    left: 0% !important;
+    transition: 1s all cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }
   .openNav {
     display: block;
     opacity: 1;
   }
-  .home{
-    .hero-banner{
+  .home {
+    .hero-banner {
       // justify-content: center;
       .img {
-          transform: translateX(0);
-        }
-    }
-  }
-
-}
-@media (max-width:1100px) {
-  .bgo-1 {
-      top: 10% !important;
-      left: 5% !important;
-    }
-  
-    .bgo-3 {
-      top: 0% !important;
-      right: 20% !important;
-    }
-  
-    .bgo-2 {
-      width: 30px;
-      height: 30px;
-      bottom: 7% !important;
-      left: 2%;
-    }
-  
-    .bgo-4 {
-      top: 30% !important;
-      left: 80% !important;
-    }
-  .page{
-    margin: 0;
-  }
-  .home,.about,.skills,.projects,.contact{
-    height: auto;
-  }
-  .home{
-    margin: 100px 0;
-    .hero-banner{
-      flex-direction: column;
-      h1,.img{
-        margin:50px 0 ;
+        transform: translateX(0);
       }
     }
   }
-  .about{
+}
+@media (max-width: 1100px) {
+  .bgo-1 {
+    top: 10% !important;
+    left: 5% !important;
+  }
+
+  .bgo-3 {
+    top: 0% !important;
+    right: 20% !important;
+  }
+
+  .bgo-2 {
+    width: 30px;
+    height: 30px;
+    bottom: 7% !important;
+    left: 2%;
+  }
+
+  .bgo-4 {
+    top: 30% !important;
+    left: 80% !important;
+  }
+  .page {
+    margin: 0;
+  }
+  .home,
+  .about,
+  .skills,
+  .projects,
+  .contact {
+    height: auto;
+  }
+  .home {
     margin: 100px 0;
-    .about-image{
+    .hero-banner {
+      flex-direction: column;
+      h1,
+      .img {
+        margin: 50px 0;
+      }
+    }
+  }
+  .about {
+    margin: 100px 0;
+    .about-image {
       right: -20%;
     }
   }
-  .skills{
+  .skills {
     margin: 100px 0;
-    .hero-text{
-      h1{
+    .hero-text {
+      h1 {
         line-height: 100px;
         margin-bottom: 20px;
       }
     }
   }
-  .projects{
+  .projects {
     margin: 100px 0;
   }
-  .contact{
+  .contact {
     margin: 100px 0;
     margin-bottom: 0;
-    .social-media-links{
+    .social-media-links {
       position: relative;
       margin: 50px 20px;
     }
   }
 }
-@media (max-width:850px) {
-  .bg-gradient-img{
+@media (max-width: 850px) {
+  .bg-gradient-img {
     top: 32% !important;
-      left: 51% !important;
-      width: 100% !important;
-      height: 100% !important;
+    left: 51% !important;
+    width: 100% !important;
+    height: 100% !important;
   }
-  h1{
+  h1 {
     font-size: 60px !important;
   }
-  .testimonial{
+  .testimonial {
     width: 100% !important;
     margin-left: -20px;
   }
-  .about-image{
+  .about-image {
     width: 20% !important;
   }
-  .skills-bar{
+  .skills-bar {
     width: 100%;
     .bar {
-        width: 100% !important;
-      }
+      width: 100% !important;
+    }
   }
-  .contact-form,.social-media-links{
+  .contact-form,
+  .social-media-links {
     width: 100% !important;
     margin: 50px 0;
   }
-  .project-cards{
-    margin:60px 0 !important;
+  .project-cards {
+    margin: 60px 0 !important;
   }
-  .skill{
+  .skill {
     margin-top: 200px !important;
   }
-  .skill-cards{
+  .skill-cards {
     width: 100% !important;
     margin: 30px 0 !important ;
   }
-  
 }
-@media (max-width:600px) {
-  .logo-section h3{
+@media (max-width: 600px) {
+  .logo-section h3 {
     font-size: 16px !important;
   }
   .contact .contact-form .input-field label {
-      font-size: 12px !important;
-    }
-  .page{
+    font-size: 12px !important;
+  }
+  .page {
     max-width: auto !important;
     padding: 0 !important;
   }
-        .home,
-        .about,
-        .skills,
-        .projects,
-        .contact {
-padding:  0 10px !important;
-        }
-  .home{
-    .img{
+  .home,
+  .about,
+  .skills,
+  .projects,
+  .contact {
+    padding: 0 10px !important;
+  }
+  .home {
+    .img {
       width: 100% !important;
-      span{
+      span {
         // width: 100% !important;
         border-radius: 20px !important;
       }
     }
   }
-  .about-image{
+  .about-image {
     top: 57% !important;
   }
-  .skills-bar{
-    margin:20px 10px!important;
+  .skills-bar {
+    margin: 20px 10px !important;
   }
-    .contact .social-media-links{
-      margin: 50px 10px !important;
-    }
+  .contact .social-media-links {
+    margin: 50px 10px !important;
+  }
 }
-@media (max-width:400px) {
-  .logo-section{
-    h3{
+@media (max-width: 400px) {
+  .logo-section {
+    h3 {
       font-size: 12px !important;
     }
   }
-    .home,
-      .about,
-      .skills,
-      .projects,
-      .contact {
-        height: auto;
-        padding-left: 0 !important;
-      }
-  h1{
+  .home,
+  .about,
+  .skills,
+  .projects,
+  .contact {
+    height: auto;
+    padding-left: 0 !important;
+  }
+  h1 {
     font-size: 40px !important;
     line-height: 60px !important;
   }

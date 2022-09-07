@@ -25,7 +25,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  background-color: #313131;
+  border-radius: 10px;
 }
 
 @-webkit-keyframes rotate {
@@ -372,6 +379,14 @@ img {
   transform: translate(3px, -3px);
   cursor: pointer;
 }
+.skills .skill-cards .actived {
+  background-color: rgba(0, 0, 0, 0.67);
+  color: #b0b0b0;
+  font-weight: bold;
+  filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 0.96));
+  transform: translate(3px, -3px);
+  cursor: pointer;
+}
 .skills .skills-bar {
   flex-direction: column;
   align-items: flex-start;
@@ -416,6 +431,13 @@ img {
   right: -2%;
   top: 65%;
 }
+.skills .sillsbg-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  filter: drop-shadow(-5px 15px 6px rgba(0, 0, 0, 0.3));
+}
 
 .projects {
   width: 100%;
@@ -448,6 +470,7 @@ img {
 .projects .project-cards .card {
   width: 300px;
   height: 300px;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.67);
   margin: 20px 30px;
   padding: 20px;
@@ -481,7 +504,8 @@ img {
   height: 100%;
   opacity: 0;
 }
-.projects .project-cards .spotify img {
+.projects .project-cards .spotify img,
+.projects .project-cards .linkedin img {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -666,24 +690,20 @@ img {
     opacity: 1;
     z-index: 999;
   }
-
   .navOpen {
     top: 0% !important;
     left: 0% !important;
     transition: 1s all cubic-bezier(0.645, 0.045, 0.355, 1) !important;
   }
-
   .navClose {
     top: -200% !important;
     left: 0% !important;
     transition: 1s all cubic-bezier(0.645, 0.045, 0.355, 1) !important;
   }
-
   .openNav {
     display: block;
     opacity: 1;
   }
-
   .home .hero-banner .img {
     transform: translateX(0);
   }
@@ -693,49 +713,46 @@ img {
     top: 10% !important;
     left: 5% !important;
   }
-
   .bgo-3 {
     top: 0% !important;
     right: 20% !important;
   }
-
   .bgo-2 {
     width: 30px;
     height: 30px;
     bottom: 7% !important;
     left: 2%;
   }
-
   .bgo-4 {
     top: 30% !important;
     left: 80% !important;
   }
-
   .page {
     margin: 0;
   }
-
-  .home, .about, .skills, .projects, .contact {
+  .home,
+.about,
+.skills,
+.projects,
+.contact {
     height: auto;
   }
-
   .home {
     margin: 100px 0;
   }
   .home .hero-banner {
     flex-direction: column;
   }
-  .home .hero-banner h1, .home .hero-banner .img {
+  .home .hero-banner h1,
+.home .hero-banner .img {
     margin: 50px 0;
   }
-
   .about {
     margin: 100px 0;
   }
   .about .about-image {
     right: -20%;
   }
-
   .skills {
     margin: 100px 0;
   }
@@ -743,11 +760,9 @@ img {
     line-height: 100px;
     margin-bottom: 20px;
   }
-
   .projects {
     margin: 100px 0;
   }
-
   .contact {
     margin: 100px 0;
     margin-bottom: 0;
@@ -764,40 +779,33 @@ img {
     width: 100% !important;
     height: 100% !important;
   }
-
   h1 {
     font-size: 60px !important;
   }
-
   .testimonial {
     width: 100% !important;
     margin-left: -20px;
   }
-
   .about-image {
     width: 20% !important;
   }
-
   .skills-bar {
     width: 100%;
   }
   .skills-bar .bar {
     width: 100% !important;
   }
-
-  .contact-form, .social-media-links {
+  .contact-form,
+.social-media-links {
     width: 100% !important;
     margin: 50px 0;
   }
-
   .project-cards {
     margin: 60px 0 !important;
   }
-
   .skill {
     margin-top: 200px !important;
   }
-
   .skill-cards {
     width: 100% !important;
     margin: 30px 0 !important;
@@ -807,16 +815,13 @@ img {
   .logo-section h3 {
     font-size: 16px !important;
   }
-
   .contact .contact-form .input-field label {
     font-size: 12px !important;
   }
-
   .page {
     max-width: auto !important;
     padding: 0 !important;
   }
-
   .home,
 .about,
 .skills,
@@ -824,22 +829,18 @@ img {
 .contact {
     padding: 0 10px !important;
   }
-
   .home .img {
     width: 100% !important;
   }
   .home .img span {
     border-radius: 20px !important;
   }
-
   .about-image {
     top: 57% !important;
   }
-
   .skills-bar {
     margin: 20px 10px !important;
   }
-
   .contact .social-media-links {
     margin: 50px 10px !important;
   }
@@ -848,7 +849,6 @@ img {
   .logo-section h3 {
     font-size: 12px !important;
   }
-
   .home,
 .about,
 .skills,
@@ -857,7 +857,6 @@ img {
     height: auto;
     padding-left: 0 !important;
   }
-
   h1 {
     font-size: 40px !important;
     line-height: 60px !important;
